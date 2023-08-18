@@ -22,4 +22,23 @@ public class ListaTarefa {
         }
         tarefaList.removeAll(tarefasRemove);
     }
+
+    public int obterNumeroTotalTarefas(){
+        return tarefaList.size();
+    }
+
+    public void obterDescricoesTarefas(){
+        System.out.println(tarefaList);
+    }
+
+    public static void main(String[] args) {
+        ListaTarefa listaTarefa = new ListaTarefa();
+
+        listaTarefa.adicionarTarefa("tarefa1");
+        listaTarefa.removerTarefa("tarefa1");
+        listaTarefa.adicionarTarefa("tarefa2");
+
+        System.out.println(listaTarefa.obterNumeroTotalTarefas());
+        listaTarefa.obterDescricoesTarefas();
+    }
 }
