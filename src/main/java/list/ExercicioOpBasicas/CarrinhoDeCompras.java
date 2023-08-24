@@ -12,10 +12,21 @@ public class CarrinhoDeCompras {
     }
 
     public void adicionarItem(String nome, double preco, int quantidade){
-        carrinhodeitens.add(new Item(nome,preco,quantidade));
+        Item item = new Item(nome,preco,quantidade);
+        carrinhodeitens.add(item);
     }
 
     public void removerItem(String nome){
-
+        List<Item> itensParaRemover = new ArrayList<>();
+        if (!carrinhodeitens.isEmpty()) {
+            for (Item i : carrinhodeitens) {
+                if (i.getNome().equalsIgnoreCase(nome)) {
+                    itensParaRemover.add(i);
+                }
+            }
+            carrinhodeitens.removeAll(itensParaRemover);
+        } else {
+            System.out.println("A lista está vazia!");
+        }
     }
 }
